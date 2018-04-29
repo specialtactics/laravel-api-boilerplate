@@ -54,9 +54,13 @@ Thank you for considering contributing to the Laravel framework! The contributio
 
 If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
 
-## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## Steps to get started 
+ * Remove the composer.lock from the .gitignore file
 
 ## Check out the documentation of supporting projects
  - [Dingo API](https://github.com/dingo/api/wiki)
+ 
+## License
+ 
+This boilerplate, much like the Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
