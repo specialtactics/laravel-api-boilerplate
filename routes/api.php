@@ -17,8 +17,11 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+/**
+ * Welcome route - link to any public API documentation here
+ */
 Route::get('/', function () {
-    return view('welcome');
+    echo 'Welcome to our API';
 });
 
 

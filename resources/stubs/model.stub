@@ -1,0 +1,24 @@
+<?php
+
+namespace DummyNamespace;
+
+class DummyClass extends BaseModel {
+    /**
+     * @var int Auto increments integer key
+     */
+    public $primaryKey = '_id';
+
+    /**
+     * @var string UUID key
+     */
+    public $uuidKey = '_uuid';
+
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = [
+        '',
+    ];
+}

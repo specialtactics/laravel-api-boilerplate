@@ -1,0 +1,11 @@
+<?php
+
+namespace DummyNamespace;
+
+use Illuminate\Http\Request;
+
+class DummyClass extends RestfulController {
+
+    public static $model = BaseModel::class;
+
+}
