@@ -209,10 +209,6 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
 
-        // Packages
-        'API' => Dingo\Api\Facade\API::class,
-        'APIRoute' => Dingo\Api\Facade\Route::class,
-
     ],
 
 ];

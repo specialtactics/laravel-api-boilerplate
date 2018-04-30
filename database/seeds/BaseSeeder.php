@@ -2,8 +2,12 @@
 
 use Illuminate\Database\Seeder;
 
-class BaseSeeder extends Seeder
-{
+class BaseSeeder extends Seeder {
+    /**
+     * @var null Faker instance
+     */
+    public $faker = null;
+
     /**
      * Run the database seeds.
      *
@@ -11,6 +15,13 @@ class BaseSeeder extends Seeder
      */
     public function run()
     {
+        // You can set the locale of your seeder as a parameter to the create function
+        // Available locales: https://github.com/fzaninotto/Faker/tree/master/src/Faker/Provider
+        $this->faker = Faker\Factory::create();
+
+        // Run in any environment
+        $this->runAlways();
+
         // Production Only
         if (App::environment() == 'production') {
             $this->runProduction();
@@ -19,9 +30,6 @@ class BaseSeeder extends Seeder
         else {
             $this->runFake();
         }
-
-        // Any environment
-        $this->runAlways();
     }
 
     /**

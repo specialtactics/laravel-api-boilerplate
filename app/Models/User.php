@@ -45,4 +45,44 @@ class User extends BaseModel implements
     protected $hidden = [
         'password', 'remember_token', 'user_id'
     ];
+
+    /**
+     * Get the identifier that will be stored in the subject claim of the JWT.
+     *
+     * @return mixed
+     */
+    public function getJWTIdentifier()
+    {
+        return $this->getUuidKey();
+    }
+
+    /**
+     * Return a key value array, containing any custom claims to be added to the JWT.
+     *
+     * @return array
+     */
+    public function getJWTCustomClaims()
+    {
+        return [];
+    }
+
+    /**
+     * User's primary role
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function primaryRole() {
+        return $this->hasOne('App\Models\Role');
+    }
+
+    /**
+     * User's secondary roles
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function roles() {
+        return $this->hasMany('App\Models\Role');
+    }
+
+
 }

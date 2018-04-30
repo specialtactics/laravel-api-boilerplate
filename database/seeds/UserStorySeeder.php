@@ -1,14 +1,25 @@
 <?php
 
-class UsersTableSeeder extends BaseSeeder
+use App\Models\Role;
+use App\Models\User;
+
+class UserStorySeeder extends BaseSeeder
 {
     public function runFake() {
+        $roles = Role::all();
+
         factory(App\Models\User::class)->create([
-            'first_name'        => 'Admin',
-            'surname'           => 'User',
-            'email'             => 'admin@admin.com',
-            'preferred_locale' => null,
-            'role_id'        => $roles->where('name', 'admin')->first()->id,
+            'name'         => 'Admin',
+            'email'        => 'admin@admin.com',
+            'primary_role' => $roles->where('name', 'admin')->first()->role_id,
         ]);
+
+        for ($i = 0; $i < 5; ++$i) {
+            factory(App\Models\User::class)->create([
+                'primary_role' => $roles->random()->role_id,
+            ]);
+
+        }
+
     }
 }
