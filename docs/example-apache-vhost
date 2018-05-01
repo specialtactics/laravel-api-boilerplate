@@ -1,0 +1,28 @@
+<VirtualHost *:80>
+        ServerAdmin webmaster@localhost
+        ServerName <replace>
+
+        RequestHeader append Accept "application/vnd.<replace>.v1+json"
+
+        DocumentRoot <replace>
+
+        <Directory <replace>>
+            Options Indexes FollowSymLinks MultiViews
+            AllowOverride All
+            Require all granted
+
+            DirectoryIndex index.php
+            FallbackResource /index.php
+        </Directory>
+
+        # Pass through auth header
+        SetEnvIf Authorization .+ HTTP_AUTHORIZATION=$0
+
+        ## ProxyPass to php-fpm
+        ## Use your own config, this is just an example
+        # ProxyPassMatch ^/(.*\.php(/.*)?)$ fcgi://127.0.0.1:9000/path/to/$1
+
+        #LogLevel warn
+        #ErrorLog /path/to/api.log
+        #CustomLog /path/to/api-access.log combined
+</VirtualHost>

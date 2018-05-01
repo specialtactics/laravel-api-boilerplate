@@ -4,8 +4,9 @@ namespace DummyNamespace;
 
 use Illuminate\Http\Request;
 
-class DummyClass extends RestfulController {
+class DummyClass extends BaseController {
 
+    // The primary model associated with this controller
     public static $model = BaseModel::class;
 
 }

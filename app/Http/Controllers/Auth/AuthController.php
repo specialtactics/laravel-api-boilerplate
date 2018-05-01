@@ -3,11 +3,11 @@
 namespace App\Http\Controllers\Auth;
 
 use Illuminate\Http\Request;
-use App\Http\Controllers\RestfulController;
+use App\Http\Controllers\BaseController;
 use App\Models\User;
 use Symfony\Component\HttpKernel\Exception\UnauthorizedHttpException;
 
-class AuthController extends RestfulController {
+class AuthController extends BaseController {
     static $model = User::class;
 
     /**

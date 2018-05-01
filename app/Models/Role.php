@@ -26,13 +26,4 @@ class Role extends BaseModel {
     protected $fillable = [
         'name', 'description',
     ];
-
-    /**
-     * The attributes that should be hidden for arrays.
-     *
-     * @var array
-     */
-    protected $hidden = [
-        'role_id',
-    ];
 }

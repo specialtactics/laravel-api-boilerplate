@@ -28,7 +28,10 @@ class User extends BaseModel implements
      */
     public $uuidKey = 'user_uuid';
 
-    public static $localWith = ['primaryRole'];
+    /**
+     * @var array Relations to load implicitly by Restful controllers
+     */
+    public static $localWith = ['primaryRole', 'roles'];
 
     /**
      * The attributes that are mass assignable.
@@ -45,7 +48,7 @@ class User extends BaseModel implements
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token', 'user_id'
+        'password', 'remember_token',
     ];
 
     /**
@@ -71,7 +74,7 @@ class User extends BaseModel implements
     /**
      * User's primary role
      *
-     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     * @return \Illuminate\Database\Eloquent\Relations\belongsTo
      */
     public function primaryRole() {
         return $this->belongsTo('App\Models\Role', 'primary_role');
@@ -80,10 +83,10 @@ class User extends BaseModel implements
     /**
      * User's secondary roles
      *
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     * @return \Illuminate\Database\Eloquent\Relations\belongsToMany
      */
     public function roles() {
-        return $this->hasMany('App\Models\Role');
+        return $this->belongsToMany('App\Models\Role', 'user_roles', 'user_id', 'role_id');
     }
 
 
