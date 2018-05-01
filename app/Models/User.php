@@ -28,6 +28,8 @@ class User extends BaseModel implements
      */
     public $uuidKey = 'user_uuid';
 
+    public static $localWith = ['primaryRole'];
+
     /**
      * The attributes that are mass assignable.
      *
@@ -72,7 +74,7 @@ class User extends BaseModel implements
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
     public function primaryRole() {
-        return $this->hasOne('App\Models\Role');
+        return $this->belongsTo('App\Models\Role', 'primary_role');
     }
 
     /**
