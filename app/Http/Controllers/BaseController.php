@@ -7,5 +7,4 @@ use Specialtactics\L5Api\Http\Controllers\RestfulController;
 class BaseController extends RestfulController
 {
 
-    // Your own customisation here
 }

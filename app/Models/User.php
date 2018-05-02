@@ -43,7 +43,7 @@ class User extends BaseModel implements
     ];
 
     /**
-     * The attributes that should be hidden for arrays.
+     * The attributes that should be hidden for arrays and API output
      *
      * @var array
      */
