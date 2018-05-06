@@ -30,7 +30,7 @@ This table shows you which versions of this package are based on which version o
 
 | Laravel Version | Boilerplate Version | Minimum PHP Version |
 |-----------------|---------------------|---------------------|
-| 5.6             | 0.x.x               | 7.1                 |
+| 5.6             | 0.x.x-dev           | 7.1                 |
 
 ### Over-riding
 This boilerplate does not aim to be too prescriptive, and almost all classes from the supporting l5-api package exist inside it, already overridden and ready for you to customise. 
@@ -47,8 +47,21 @@ Artisan generators have been re-written for some key features to ensure they com
 
 This boilerplate has several additional configuration files you should be aware of:
  
- * api.php
- * jwt.php
+ * api.php - Dingo API Configuration
+ * jwt.php - Tymon JWT Configuration
+ * stubs.php  - This loads custom API stubs for certain artisan generators
+
+## Automated Testing
+
+This boilerplate is using Laravel's phpunit tests. You will find API tests in their own directory, and suite. Some tests have been written for the existing endpoints to get you started.
+
+To run tests on the commandline;
+
+```bash
+./phpunit
+```
+
+The convention used is that every test file will fresh and seed the database once only, at the start - in order to save execution time.
 
 ## Contributing
 
@@ -73,6 +86,13 @@ I have tried to include only the packages thought absolutely necessary, so here 
  - [Bugsnag for Laravel](https://github.com/bugsnag/bugsnag-laravel)
  - [PHP CodeSniffer](https://github.com/squizlabs/PHP_CodeSniffer)
  
+
+## Todo
+ - Authentication
+ - Write more tests
+ - Code style enforcement
+ - Bulk delete
+ - Bulk put/post
 
 ## License
  
