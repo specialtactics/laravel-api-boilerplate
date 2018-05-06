@@ -48,12 +48,12 @@ $api->version('v1', function($api) {
      * Users
      */
     $api->group(['prefix' => 'users'], function($api) {
-        $api->get('/', 'App\Http\Controllers\UsersController@getAll');
-        $api->get('/{uuid}', 'App\Http\Controllers\UsersController@get');
-        $api->post('/', 'App\Http\Controllers\UsersController@post');
-        $api->put('/{uuid}', 'App\Http\Controllers\UsersController@put');
-        $api->patch('/{uuid}', 'App\Http\Controllers\UsersController@patch');
-        $api->delete('/{uuid}', 'App\Http\Controllers\UsersController@delete');
+        $api->get('/', 'App\Http\Controllers\UserController@getAll');
+        $api->get('/{uuid}', 'App\Http\Controllers\UserController@get');
+        $api->post('/', 'App\Http\Controllers\UserController@post');
+        $api->put('/{uuid}', 'App\Http\Controllers\UserController@put');
+        $api->patch('/{uuid}', 'App\Http\Controllers\UserController@patch');
+        $api->delete('/{uuid}', 'App\Http\Controllers\UserController@delete');
     });
 
 });
