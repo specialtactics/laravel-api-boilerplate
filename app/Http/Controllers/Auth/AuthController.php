@@ -7,8 +7,10 @@ use App\Http\Controllers\BaseController;
 use App\Models\User;
 use Symfony\Component\HttpKernel\Exception\UnauthorizedHttpException;
 
-class AuthController extends BaseController {
-    static $model = User::class;
+class AuthController extends BaseController
+{
+
+    public static $model = User::class;
 
     /**
      * Create a new AuthController instance.

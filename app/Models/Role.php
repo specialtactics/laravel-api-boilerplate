@@ -2,7 +2,8 @@
 
 namespace App\Models;
 
-class Role extends BaseModel {
+class Role extends BaseModel
+{
     /**
      * Role constants
      */
