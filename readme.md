@@ -9,6 +9,9 @@ You can (and should) set this up in exactly the same way as laravel. Any extra s
 When setting up the project for the first time, please execute the following commands:
 
 ```bash
+composer install
+composer run post-root-package-install
+php artisan key:generate
 php artisan jwt:secret
 ```
 
@@ -58,7 +61,7 @@ This boilerplate is using Laravel's phpunit tests. You will find API tests in th
 To run tests on the commandline;
 
 ```bash
-./phpunit
+composer test
 ```
 
 The convention used is that every test file will fresh and seed the database once only, at the start - in order to save execution time.
