@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Services\RestfulService;
 use Illuminate\Http\Request;
 use App\Http\Controllers\BaseController;
 use App\Models\User;
@@ -16,9 +17,9 @@ class AuthController extends BaseController
      * Create a new AuthController instance.
      *
      */
-    public function __construct()
+    public function __construct(RestfulService $restfulService)
     {
-        parent::__construct();
+        parent::__construct($restfulService);
 
         $this->middleware('auth:api', ['except' => ['login']]);
     }
