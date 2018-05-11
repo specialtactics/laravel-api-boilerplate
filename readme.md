@@ -96,6 +96,7 @@ I have tried to include only the packages thought absolutely necessary, so here 
  - Code style enforcement
  - Bulk delete
  - Bulk put/post
+ - Logging of API requests using middleware
 
 ## License
  
