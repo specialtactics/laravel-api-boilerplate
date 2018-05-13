@@ -72,9 +72,10 @@ class User extends BaseModel implements
      *
      * @return array Rules
      */
-    public function validationRules() {
+    public function getValidationRules() {
         return [
             'email' => 'required|email',
+            'name'  => 'required|min:3',
             'password' => 'required',
         ];
     }
