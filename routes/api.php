@@ -29,7 +29,7 @@ Route::get('/', function () {
  * @var $api \Dingo\Api\Routing\Router
  */
 $api = app('Dingo\Api\Routing\Router');
-$api->version('v1', function($api) {
+$api->version('v1', ['middleware' => ['api']], function ($api) {
     /**
      * Authentication
      */
