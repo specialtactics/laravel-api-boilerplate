@@ -93,7 +93,7 @@ I have tried to include only the packages thought absolutely necessary, so here 
 ## Todo
  - Authentication
  - Write more tests
- - Code style enforcement
+ - Docs
  - Bulk delete
  - Bulk put/post
  - Logging of API requests using middleware
