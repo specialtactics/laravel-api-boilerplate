@@ -1,10 +1,21 @@
 <p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
 
 ## About Laravel API Boilerplate
-This is a boilerplate for writing API projects using Laravel. The aim of this project is to provide users with scaffolding and functionality which will make writing APIs quick, efficient and convenient.
+This is a boilerplate for writing RESTful API projects using Laravel. The aim of this project is to provide developers with scaffolding and functionality which will make writing APIs exceedingly quick, efficient and convenient.
+The principles of this boilerplate are to;
+
+ - Save developers considerable effort by using reasonable conventions
+ - Allow for everything the boilerplate provides to be easily and entirely customised to suit developer needs, through normal PHP inheritance
+   - As as well as allow developers to easily use the boilerplate functionality and mix it in with their own implementation
+ - Follow REST standards very closely
+ - Use existing Laravel features and existing Laravel add-on packages where possible
+ - Add many convenient features useful for writing APIs
+ - Maintain a high level of performance
+
+This boilerplate is designed to be used when starting a new API project. Therefore, instead of cloning the laravel repository, you should clone this one.
 
 ## Project Setup
-You can (and should) set this up in exactly the same way as laravel. Any extra setup steps are outlined below.
+You can (and should) set this up in exactly the same way as laravel. The minimal installation steps for local development are outlined below, and you should consult the Laravel documentation for comprehensive Laravel configuration options.
 
 When setting up the project for the first time, please execute the following commands:
 
@@ -20,39 +31,22 @@ Additionally, please carry out the following steps:
  * Remove the composer.lock from the .gitignore file
 
 ## Boilerplate Documentation
+All functionality and use cases provided by this boilerplate are documented n the [Project Wiki](https://github.com/specialtactics/l5-api-boilerplate/wiki).
 
-### Boilerplate Parts
-This boilerplate is essentially a raw installation of Laravel 5, with some customisations. In order to keep the changes to Laravel itself to a minimum (in order to not clutter the new projects, and also make it easier to update), 
-most heavy lifting is done by the supporting package [l5-api](https://github.com/specialtactics/l5-api).
+### Boilerplate Structure
+This boilerplate is essentially a raw installation of Laravel 5, with various customisations.
 
-The "l5-api" package has base "restful" elements - such as controllers, models, transformers and other things, designed to make Laravel more API-friendly.
+In order to keep the changes to Laravel itself to a minimum, most heavy lifting is done by the supporting package [l5-api](https://github.com/specialtactics/l5-api). This allows for easier updating and forward compatibility, while minimising clutter in your root repository.
 
-### Versioning
+The "l5-api" package has base "restful" elements - such as controllers, models, transformers, middleware, helpers and other things - designed to make Laravel more API-friendly. Meanwhile, changes to the laravel repository ensure these elements are properly used and integrated into Laravel itself.
 
-This table shows you which versions of this package are based on which version of Laravel
+### Versions
+
+This table shows you which versions of this boilerplate mirror which versions of Laravel.
 
 | Laravel Version | Boilerplate Version | Minimum PHP Version |
 |-----------------|---------------------|---------------------|
 | 5.6             | 0.x.x-dev           | 7.1                 |
-
-### Over-riding
-This boilerplate does not aim to be too prescriptive, and almost all classes from the supporting l5-api package exist inside it, already overridden and ready for you to customise. 
-
-### Generators
-
-Artisan generators have been re-written for some key features to ensure they comply with the boilerplate. Namely;
- 
- * Controllers
- * Models
- * Seeds
-
-### Extra Configuration
-
-This boilerplate has several additional configuration files you should be aware of:
- 
- * api.php - Dingo API Configuration
- * jwt.php - Tymon JWT Configuration
- * stubs.php  - This loads custom API stubs for certain artisan generators
 
 ## Automated Testing
 
@@ -70,7 +64,7 @@ The convention used is that every test file will fresh and seed the database onc
 
 If you would like to contribute to this project, please feel free to submit a pull request. If you plan to do any major work - it may be worthwhile messaging the author beforehand to explain your plans and get them approved.
 
-Please keep in mind, this package is only the template portion of the boilerplate, the other portion is [l5-api](https://github.com/specialtactics/l5-api).
+Please keep in mind, this package is only the template portion of the boilerplate, the other portion is [l5-api](https://github.com/specialtactics/l5-api). Before adding any new functionality you should consider whether it's possible at all to keep it out of this project and rather put it into l5-api, as that is preferred.
 
 ## Check out the documentation of supporting projects
 
