@@ -92,8 +92,11 @@ I have tried to include only the packages thought absolutely necessary, so here 
 
 ## Todo
  - Authentication
- - Write more tests
  - Docs
+ - One command to generate multiple things (eg. Controller, Model, pre-fill controller with model class; then DB)
+ - Add primative transformers
+ - Add config & allow ID to be added to model resource
+ - Write more tests
  - Bulk delete
  - Bulk put/post
  - Logging of API requests using middleware
