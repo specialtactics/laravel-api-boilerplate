@@ -94,9 +94,11 @@ I have tried to include only the packages thought absolutely necessary, so here 
  - Authentication
  - Docs
  - One command to generate multiple things (eg. Controller, Model, pre-fill controller with model class; then DB)
- - Add primative transformers
+ - Finish restful child controller
+ - Add primitive transformers
  - Add config & allow ID to be added to model resource
  - Write more tests
+ - Allow for authentication using only JWT, with middleware (for high speed requests)
  - Bulk delete
  - Bulk put/post
  - Logging of API requests using middleware
