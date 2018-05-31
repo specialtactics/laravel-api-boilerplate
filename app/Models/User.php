@@ -9,15 +9,17 @@ use Illuminate\Foundation\Auth\Access\Authorizable;
 use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 use Illuminate\Contracts\Auth\Access\Authorizable as AuthorizableContract;
 use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
+use Tymon\JWTAuth\Contracts\JWTSubject;
 use Hash;
+use App\Models\Role;
 
 class User extends BaseModel implements
     AuthenticatableContract,
     AuthorizableContract,
-    CanResetPasswordContract
+    CanResetPasswordContract,
+    JWTSubject
 {
-    use Authenticatable, Authorizable, CanResetPassword;
-    use Notifiable;
+    use Authenticatable, Authorizable, CanResetPassword, Notifiable;
 
     /**
      * @var int Auto increments integer key
@@ -40,7 +42,7 @@ class User extends BaseModel implements
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password', 'primary_role'
     ];
 
     /**
@@ -49,7 +51,7 @@ class User extends BaseModel implements
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token',
+        'password', 'remember_token', 'primary_role',
     ];
 
     /**
@@ -59,8 +61,8 @@ class User extends BaseModel implements
     {
         parent::boot();
 
-        // Has user password, if not already hashed
         static::saving(function (User $user) {
+            // Hash user password, if not already hashed
             if (Hash::needsRehash($user->password)) {
                 $user->password = Hash::make($user->password);
             }
@@ -74,9 +76,9 @@ class User extends BaseModel implements
      */
     public function getValidationRules() {
         return [
-            'email' => 'required|email',
+            'email' => 'email|max:255|unique:users',
             'name'  => 'required|min:3',
-            'password' => 'required',
+            'password' => 'required|min:6',
         ];
     }
 
@@ -86,7 +88,7 @@ class User extends BaseModel implements
      * @return \Illuminate\Database\Eloquent\Relations\belongsTo
      */
     public function primaryRole() {
-        return $this->belongsTo('App\Models\Role', 'primary_role');
+        return $this->belongsTo(Role::class, 'primary_role');
     }
 
     /**
@@ -95,7 +97,7 @@ class User extends BaseModel implements
      * @return \Illuminate\Database\Eloquent\Relations\belongsToMany
      */
     public function roles() {
-        return $this->belongsToMany('App\Models\Role', 'user_roles', 'user_id', 'role_id');
+        return $this->belongsToMany(Role::class, 'user_roles', 'user_id', 'role_id');
     }
 
     /**
@@ -117,6 +119,22 @@ class User extends BaseModel implements
      */
     public function getJWTCustomClaims()
     {
-        return [];
+        return [
+            'user' => [
+                'user_uuid' => $this->getUuidKey(),
+                'name' => $this->name,
+                'primaryRole' => $this->primaryRole->name,
+            ]
+        ];
+    }
+
+    /**
+     * Get the name of the unique identifier for the user.
+     *
+     * @return string
+     */
+    public function getAuthIdentifierName()
+    {
+        return $this->getUuidKeyName();
     }
 }
