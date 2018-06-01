@@ -101,6 +101,20 @@ class User extends BaseModel implements
     }
 
     /**
+     * Get all user's roles
+     */
+    public function getRoles() {
+        $allRoles = array_merge(
+            [
+                $this->primaryRole->name,
+            ],
+            $this->roles->pluck('name')->toArray()
+        );
+
+        return $allRoles;
+    }
+
+    /**
      * For Authentication
      * Get the identifier that will be stored in the subject claim of the JWT.
      *

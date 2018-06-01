@@ -58,7 +58,7 @@ $api->version('v1', ['middleware' => ['api']], function ($api) {
         /**
          * Users
          */
-        $api->group(['prefix' => 'users'], function ($api) {
+        $api->group(['prefix' => 'users', 'middleware' => 'check_role:admin'], function ($api) {
             $api->get('/', 'App\Http\Controllers\UserController@getAll');
             $api->get('/{uuid}', 'App\Http\Controllers\UserController@get');
             $api->post('/', 'App\Http\Controllers\UserController@post');
