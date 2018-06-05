@@ -115,6 +115,15 @@ class User extends BaseModel implements
     }
 
     /**
+     * Is this user an admin?
+     *
+     * @return bool
+     */
+    public function isAdmin() {
+        return $this->primaryRole->name == Role::ROLE_ADMIN;
+    }
+
+    /**
      * For Authentication
      * Get the identifier that will be stored in the subject claim of the JWT.
      *
