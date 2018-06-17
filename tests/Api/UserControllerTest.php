@@ -25,7 +25,7 @@ class UserTest extends ApiTestCase
                 [
                     'data' => [
                         [
-                            'userUuid',
+                            'id',
                             'name',
                             'email',
                         ],
@@ -49,7 +49,7 @@ class UserTest extends ApiTestCase
                     'data' => array_merge(
                         array_keys($testUser),
                         [
-                            camel_case((new User)->getUuidKeyName()),
+                            'id',
                         ]
                     )
                 ]
