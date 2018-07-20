@@ -131,7 +131,7 @@ class User extends BaseModel implements
      */
     public function getJWTIdentifier()
     {
-        return $this->getUuidKey();
+        return $this->getKey();
     }
 
     /**
@@ -144,7 +144,7 @@ class User extends BaseModel implements
     {
         return [
             'user' => [
-                'user_uuid' => $this->getUuidKey(),
+                'user_uuid' => $this->getKey(),
                 'name' => $this->name,
                 'primaryRole' => $this->primaryRole->name,
             ]
@@ -158,6 +158,6 @@ class User extends BaseModel implements
      */
     public function getAuthIdentifierName()
     {
-        return $this->getUuidKeyName();
+        return $this->getKeyName();
     }
 }
