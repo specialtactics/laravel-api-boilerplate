@@ -87,7 +87,6 @@ I have tried to include only the packages thought absolutely necessary, so here 
 ## Todo
  - Docs
  - One command to generate multiple things (eg. Controller, Model, pre-fill controller with model class; then DB)
- - Finish restful child controller
  - Add primitive transformers
  - Add config & allow ID to be added to model resource
  - Write more tests

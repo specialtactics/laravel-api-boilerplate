@@ -27,11 +27,6 @@ class User extends BaseModel implements
     public $primaryKey = 'user_id';
 
     /**
-     * @var string UUID key
-     */
-    public $uuidKey = 'user_uuid';
-
-    /**
      * @var array Relations to load implicitly by Restful controllers
      */
     public static $localWith = ['primaryRole', 'roles'];
@@ -144,7 +139,7 @@ class User extends BaseModel implements
     {
         return [
             'user' => [
-                'user_uuid' => $this->getKey(),
+                'id' => $this->getKey(),
                 'name' => $this->name,
                 'primaryRole' => $this->primaryRole->name,
             ]
