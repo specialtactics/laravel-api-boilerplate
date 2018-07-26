@@ -19,6 +19,8 @@ class BaseSeeder extends Seeder {
         // Available locales: https://github.com/fzaninotto/Faker/tree/master/src/Faker/Provider
         $this->faker = Faker\Factory::create();
 
+        $this->before();
+
         // Run in any environment
         $this->runAlways();
 
@@ -30,26 +32,47 @@ class BaseSeeder extends Seeder {
         else {
             $this->runFake();
         }
+
+        $this->after();
     }
 
     /**
      * Run fake seeds - for non production environments
      *
-     * @return mixed
+     * @return void
      */
-    public function runFake() {}
+    public function runFake() {
+    }
 
     /**
      * Run seeds to be ran only on production environments
      *
-     * @return mixed
+     * @return void
      */
-    public function runProduction() {}
+    public function runProduction() {
+    }
 
     /**
      * Run seeds to be ran on every environment (including production)
      *
-     * @return mixed
+     * @return void
      */
-    public function runAlways() {}
+    public function runAlways() {
+    }
+
+    /**
+     * Run before all any seeding
+     *
+     * @return void
+     */
+    public function before() {
+    }
+
+    /**
+     * Run after all seeding
+     *
+     * @return void
+     */
+    public function after() {
+    }
 }
