@@ -59,7 +59,10 @@
             "@php artisan package:discover"
         ],
         "test": "./vendor/bin/phpunit",
-        "lint": "./vendor/bin/phpcs"
+        "lint": "./vendor/bin/phpcs",
+        "docs": [
+            "@php artisan ide-helper:generate --no-interaction"
+        ]
     },
     "config": {
         "preferred-install": "dist",

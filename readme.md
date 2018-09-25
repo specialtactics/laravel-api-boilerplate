@@ -24,6 +24,7 @@ composer install
 composer run post-root-package-install
 php artisan key:generate
 php artisan jwt:secret
+php artisan ide-helper:generate
 ```
 
 Additionally, please carry out the following steps:
