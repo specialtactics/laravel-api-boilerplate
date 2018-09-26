@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 
-class UserController extends BaseController
+class UserController extends Controller
 {
     public static $model = User::class;
 }
