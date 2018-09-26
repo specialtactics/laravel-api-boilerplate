@@ -1,7 +1,7 @@
 {
     "name": "specialtactics/l5-api-boilerplate",
     "description": "An API boilerplate for Laravel 5",
-    "keywords": ["laravel", "boilerplate", "api"],
+    "keywords": ["laravel", "boilerplate", "api", "api boilerplate", "laravel api"],
     "license": "MIT",
     "type": "project",
     "authors": [
@@ -13,7 +13,7 @@
     "require": {
         "php": "^7.1.3",
         "fideloper/proxy": "^4.0",
-        "laravel/framework": "5.6.*",
+        "laravel/framework": "5.7.*",
         "laravel/tinker": "^1.0",
         "specialtactics/l5-api": "dev-master"
     },

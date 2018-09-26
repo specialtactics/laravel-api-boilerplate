@@ -48,6 +48,7 @@ This table shows you which versions of this boilerplate mirror which versions of
 | Laravel Version | Boilerplate Version | Minimum PHP Version |
 |-----------------|---------------------|---------------------|
 | 5.6             | 0.x.x-dev           | 7.1                 |
+| 5.7             | 0.x.x-dev           | 7.1                 |
 
 ## Automated Testing
 
@@ -86,8 +87,8 @@ I have tried to include only the packages thought absolutely necessary, so here 
  
 
 ## Todo
- - Make snake case vs camcel case configurable
- - Fix up any 401 vs 403 inconsistencies
+ - Make snake case vs camcel case configurable in transformation layer
+ - Fix up any 401 vs 403 inconsistencies (fixed, double check exceptions and tests)
  - Docs
  - One command to generate multiple things (eg. Controller, Model, pre-fill controller with model class; then DB)
  - Integrate this https://github.com/spatie/laravel-query-builder
