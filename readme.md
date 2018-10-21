@@ -88,6 +88,7 @@ I have tried to include only the packages thought absolutely necessary, so here 
 
 ## Todo
  - Make snake case vs camcel case configurable in transformation layer
+ - Integrate laravel telescope (once released)
  - Fix up any 401 vs 403 inconsistencies (fixed, double check exceptions and tests)
  - Docs
  - One command to generate multiple things (eg. Controller, Model, pre-fill controller with model class; then DB)
