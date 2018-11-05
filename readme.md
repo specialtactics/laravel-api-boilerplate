@@ -21,6 +21,7 @@ When setting up the project for the first time, please execute the following com
 
 ```bash
 composer install
+cp .env.example .env
 composer run post-root-package-install
 php artisan key:generate
 php artisan jwt:secret
