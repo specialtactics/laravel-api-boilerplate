@@ -6,7 +6,7 @@ The principles of this boilerplate are to;
 
  - Save developers considerable effort by using reasonable conventions
  - Allow for everything the boilerplate provides to be easily and entirely customised to suit developer needs, through normal PHP inheritance
-   - As as well as allow developers to easily use the boilerplate functionality and mix it in with their own implementation
+   - As well as allow developers to easily use the boilerplate functionality and mix it in with their own implementation
  - Follow REST standards very closely
  - Use existing Laravel features and existing Laravel add-on packages where possible
  - Add many convenient features useful for writing APIs
@@ -32,7 +32,7 @@ Additionally, please carry out the following steps:
  * Remove the composer.lock from the .gitignore file
 
 ## Boilerplate Documentation
-All functionality and use cases provided by this boilerplate are documented n the [Project Wiki](https://github.com/specialtactics/l5-api-boilerplate/wiki).
+All functionality and use cases provided by this boilerplate are documented in the [Project Wiki](https://github.com/specialtactics/l5-api-boilerplate/wiki).
 
 ### Boilerplate Structure
 This boilerplate is essentially a raw installation of Laravel 5, with various customisations.
