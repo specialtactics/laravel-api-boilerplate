@@ -87,6 +87,7 @@ I have tried to include only the packages thought absolutely necessary, so here 
  
 
 ## Todo
+ - Add pagination from dingo to default controller functionality
  - Think of an easy way to deal with needing to hide relationships 
  - Fix up any 401 vs 403 inconsistencies (fixed, double check exceptions and tests)
  - Docs
@@ -99,6 +100,7 @@ I have tried to include only the packages thought absolutely necessary, so here 
  - Allow for authentication using only JWT, with middleware (for high speed requests)
  - Bulk delete
  - Bulk put/post
+ - Abstract all string text into language files
  - Logging of API requests using middleware
 
 ## License
