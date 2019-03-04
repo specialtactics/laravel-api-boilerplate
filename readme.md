@@ -49,6 +49,7 @@ This table shows you which versions of this boilerplate mirror which versions of
 |-----------------|---------------------|---------------------|
 | 5.6             | 0.x.x-dev           | 7.1                 |
 | 5.7             | 0.x.x-dev           | 7.1                 |
+| 5.8             | 0.1                 | 7.1                 |
 
 ## Automated Testing
 
@@ -89,7 +90,6 @@ I have tried to include only the packages thought absolutely necessary, so here 
 ## Todo
  - Add pagination to child controller getAll() (requires a bit of a rewrite of how that works)
  - Think of an easy way to deal with needing to hide relationships 
- - Fix up any 401 vs 403 inconsistencies (fixed, double check exceptions and tests)
  - Docs
  - One command to generate multiple things (eg. Controller, Model, pre-fill controller with model class; then DB)
  - Add command to make a new transformer
