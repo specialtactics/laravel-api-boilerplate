@@ -37,7 +37,7 @@ class User extends BaseModel implements
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'primary_role'
+        'name', 'email', 'password', 'primary_role',
     ];
 
     /**
@@ -69,7 +69,8 @@ class User extends BaseModel implements
      *
      * @return array Rules
      */
-    public function getValidationRules() {
+    public function getValidationRules()
+    {
         return [
             'email' => 'email|max:255|unique:users',
             'name'  => 'required|min:3',
@@ -82,7 +83,8 @@ class User extends BaseModel implements
      *
      * @return \Illuminate\Database\Eloquent\Relations\belongsTo
      */
-    public function primaryRole() {
+    public function primaryRole()
+    {
         return $this->belongsTo(Role::class, 'primary_role');
     }
 
@@ -91,14 +93,16 @@ class User extends BaseModel implements
      *
      * @return \Illuminate\Database\Eloquent\Relations\belongsToMany
      */
-    public function roles() {
+    public function roles()
+    {
         return $this->belongsToMany(Role::class, 'user_roles', 'user_id', 'role_id');
     }
 
     /**
      * Get all user's roles
      */
-    public function getRoles() {
+    public function getRoles()
+    {
         $allRoles = array_merge(
             [
                 $this->primaryRole->name,
@@ -114,7 +118,8 @@ class User extends BaseModel implements
      *
      * @return bool
      */
-    public function isAdmin() {
+    public function isAdmin()
+    {
         return $this->primaryRole->name == Role::ROLE_ADMIN;
     }
 
@@ -142,7 +147,7 @@ class User extends BaseModel implements
                 'id' => $this->getKey(),
                 'name' => $this->name,
                 'primaryRole' => $this->primaryRole->name,
-            ]
+            ],
         ];
     }
 

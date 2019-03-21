@@ -4,14 +4,16 @@ use App\Models\Role;
 
 class RoleTableSeeder extends BaseSeeder
 {
-    public function runAlways() {
+    public function runAlways()
+    {
         Role::firstOrCreate([
             'name' => 'admin',
             'description' => 'Administrator Users',
         ]);
     }
 
-    public function runFake() {
+    public function runFake()
+    {
         for ($i = 0; $i < 10; ++$i) {
             Role::firstOrCreate([
                 'name' => $this->faker->unique()->word(),
@@ -27,7 +29,8 @@ class RoleTableSeeder extends BaseSeeder
      * @param $count int How many roles to get
      * @return Illuminate\Support\Collection
      */
-    public static function getRandomRoles($count) {
+    public static function getRandomRoles($count)
+    {
         $roles = Role::all();
 
         $fakeRoles = [];
