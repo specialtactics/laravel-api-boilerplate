@@ -4,6 +4,8 @@ enabled:
 
 disabled:
   - length_ordered_imports
+  - no_unused_imports
+  - phpdoc_summary
 
 finder:
   exclude:
