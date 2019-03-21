@@ -3,7 +3,6 @@ preset: laravel
 enabled:
 
 disabled:
-  - alpha_ordered_imports
   - length_ordered_imports
 
 finder:
