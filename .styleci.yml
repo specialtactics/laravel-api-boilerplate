@@ -8,7 +8,7 @@ disabled:
   - phpdoc_summary
   - phpdoc_var_without_name
   - post_increment
-  
+
 finder:
   exclude:
     - "tests"
