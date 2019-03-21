@@ -2,7 +2,8 @@
 
 use Illuminate\Database\Seeder;
 
-class BaseSeeder extends Seeder {
+class BaseSeeder extends Seeder
+{
     /**
      * @var null Faker instance
      */
@@ -41,7 +42,8 @@ class BaseSeeder extends Seeder {
      *
      * @return void
      */
-    public function runFake() {
+    public function runFake()
+    {
     }
 
     /**
@@ -49,7 +51,8 @@ class BaseSeeder extends Seeder {
      *
      * @return void
      */
-    public function runProduction() {
+    public function runProduction()
+    {
     }
 
     /**
@@ -57,7 +60,8 @@ class BaseSeeder extends Seeder {
      *
      * @return void
      */
-    public function runAlways() {
+    public function runAlways()
+    {
     }
 
     /**
@@ -65,7 +69,8 @@ class BaseSeeder extends Seeder {
      *
      * @return void
      */
-    public function before() {
+    public function before()
+    {
     }
 
     /**
@@ -73,6 +78,7 @@ class BaseSeeder extends Seeder {
      *
      * @return void
      */
-    public function after() {
+    public function after()
+    {
     }
 }

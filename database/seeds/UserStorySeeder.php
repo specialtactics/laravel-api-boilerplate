@@ -5,7 +5,8 @@ use App\Models\User;
 
 class UserStorySeeder extends BaseSeeder
 {
-    public function runFake() {
+    public function runFake()
+    {
         // Grab all roles for reference
         $roles = Role::all();
 
@@ -30,6 +31,5 @@ class UserStorySeeder extends BaseSeeder
                 $user->roles()->save($fakeRolesToAssign->shift());
             }
         }
-
     }
 }

@@ -17,20 +17,19 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-/**
+/*
  * Welcome route - link to any public API documentation here
  */
 Route::get('/', function () {
     echo 'Welcome to our API';
 });
 
-
 /**
  * @var $api \Dingo\Api\Routing\Router
  */
 $api = app('Dingo\Api\Routing\Router');
 $api->version('v1', ['middleware' => ['api']], function ($api) {
-    /**
+    /*
      * Authentication
      */
     $api->group(['prefix' => 'auth'], function ($api) {
@@ -39,11 +38,11 @@ $api->version('v1', ['middleware' => ['api']], function ($api) {
         });
     });
 
-    /**
+    /*
      * Authenticated routes
      */
     $api->group(['middleware' => ['api.auth']], function ($api) {
-        /**
+        /*
          * Authentication
          */
         $api->group(['prefix' => 'auth'], function ($api) {
@@ -55,7 +54,7 @@ $api->version('v1', ['middleware' => ['api']], function ($api) {
             $api->get('/me', 'App\Http\Controllers\Auth\AuthController@getUser');
         });
 
-        /**
+        /*
          * Users
          */
         $api->group(['prefix' => 'users', 'middleware' => 'check_role:admin'], function ($api) {
@@ -67,7 +66,7 @@ $api->version('v1', ['middleware' => ['api']], function ($api) {
             $api->delete('/{uuid}', 'App\Http\Controllers\UserController@delete');
         });
 
-        /**
+        /*
          * Roles
          */
         $api->group(['prefix' => 'roles'], function ($api) {
