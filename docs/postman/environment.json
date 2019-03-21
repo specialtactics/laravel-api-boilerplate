@@ -1,0 +1,26 @@
+{
+	"id": "2f15b865-6e39-440a-ab63-b53417bd1bb2",
+	"name": "API Boilerplate",
+	"values": [
+		{
+			"key": "HOST",
+			"value": "http://local.api.l5api",
+			"enabled": true
+		},
+		{
+			"key": "adminEmail",
+			"value": "admin@admin.com",
+			"description": "",
+			"enabled": true
+		},
+		{
+			"key": "adminPassword",
+			"value": "password",
+			"description": "",
+			"enabled": true
+		}
+	],
+	"_postman_variable_scope": "environment",
+	"_postman_exported_at": "2019-03-21T13:58:28.136Z",
+	"_postman_exported_using": "Postman/7.0.6"
+}
