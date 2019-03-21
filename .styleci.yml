@@ -6,6 +6,7 @@ disabled:
   - length_ordered_imports
   - no_unused_imports
   - phpdoc_summary
+  - phpdoc_var_without_name
 
 finder:
   exclude:
