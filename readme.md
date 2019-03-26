@@ -1,4 +1,5 @@
 [![StyleCI](https://github.styleci.io/repos/131504554/shield?branch=master)](https://github.styleci.io/repos/131504554)
+[![Github All Releases](https://img.shields.io/github/downloads/atom/atom/total.svg)]()
 
 <p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
 
@@ -90,9 +91,10 @@ I have tried to include only the packages thought absolutely necessary, so here 
  
 
 ## Todo
+ - Docs
  - Add pagination to child controller getAll() (requires a bit of a rewrite of how that works)
  - Think of an easy way to deal with needing to hide relationships 
- - Docs
+ - Deprecate the global helpers in favour of static class helpers
  - One command to generate multiple things (eg. Controller, Model, pre-fill controller with model class; then DB)
  - Add command to make a new transformer
  - Integrate this https://github.com/spatie/laravel-query-builder
