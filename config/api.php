@@ -227,6 +227,7 @@ return [
             'indent_size' => env('API_JSON_FORMAT_INDENT_SIZE', 2),
         ],
         'caseType' => env('API_CASE_TYPE', 'camel-case'),
+        'transform_keys_levels' => env('API_TRANSFORM_KEYS_LEVELS', null),
     ],
 
 ];
