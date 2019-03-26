@@ -1,5 +1,4 @@
 [![StyleCI](https://github.styleci.io/repos/131504554/shield?branch=master)](https://github.styleci.io/repos/131504554)
-[![Github All Releases](https://img.shields.io/github/downloads/atom/atom/total.svg)]()
 
 <p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
 
