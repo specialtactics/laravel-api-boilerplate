@@ -65,7 +65,7 @@
             "@php artisan key:generate --ansi",
             "@php artisan jwt:secret"
         ],
-        "test": "./vendor/bin/phpunit",
+        "test": "./vendor/bin/phpunit --colors=always -v --testdox",
         "lint": "./vendor/bin/phpcs",
         "docs": [
             "@php artisan ide-helper:generate --no-interaction"
