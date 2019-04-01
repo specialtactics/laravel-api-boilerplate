@@ -41,12 +41,12 @@ Every great project stands on the shoulders of giants. Check out the documentati
 
 I have tried to include only the packages thought absolutely necessary, so here is a list of packages I recommend checking out:
 
- - **General** 
+#### General 
  - [PHP CodeSniffer](https://github.com/squizlabs/PHP_CodeSniffer)
  - [Laravel Cors](https://github.com/barryvdh/laravel-cors)
  - [PHP-VCR](https://github.com/php-vcr/php-vcr)
 
- - **For Debugging** 
+#### For Debugging 
  - [Bugsnag for Laravel](https://github.com/bugsnag/bugsnag-laravel)
  - [Sentry](https://github.com/getsentry/sentry-laravel)
 
