@@ -94,7 +94,7 @@ I have tried to include only the packages thought absolutely necessary, so here 
  - Add pagination to child controller getAll() (requires a bit of a rewrite of how that works)
  - Think of an easy way to deal with needing to hide relationships 
  - Deprecate the global helpers in favour of static class helpers
- - One command to generate multiple things (eg. Controller, Model, pre-fill controller with model class; then DB)
+ - Docs
  - Add command to make a new transformer
  - Integrate this https://github.com/spatie/laravel-query-builder
  - Add primitive transformers
