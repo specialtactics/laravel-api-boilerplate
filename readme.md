@@ -52,6 +52,7 @@ I have tried to include only the packages thought absolutely necessary, so here 
 
 
 ## Todo
+ - Combine restfulservice patch and persistresource
  - Add a sensible PUT implementation
  - Add model factory to make:api-resource command and integrate it with stub for seeder
  - Add pagination to child controller getAll() (requires a bit of a rewrite of how that works)
