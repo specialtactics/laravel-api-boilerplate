@@ -215,7 +215,7 @@ return [
 
     'formats' => [
 
-        'json' => Dingo\Api\Http\Response\Format\Json::class,
+        'json' => Specialtactics\L5Api\Http\Response\Format\Json::class,
 
     ],
 
