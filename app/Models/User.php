@@ -56,7 +56,7 @@ class User extends BaseModel implements
     {
         parent::boot();
 
-        static::saving(function (User $user) {
+        static::saving(function (self $user) {
             // Hash user password, if not already hashed
             if (Hash::needsRehash($user->password)) {
                 $user->password = Hash::make($user->password);
