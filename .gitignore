@@ -17,3 +17,6 @@ composer.lock
 
 .phpstorm*
 _ide_helper.php
+
+# mac os
+.DS_Store
