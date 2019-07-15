@@ -9,7 +9,6 @@
     <file>app</file>
     <file>config</file>
     <file>resources/views</file>
-    <file>tests</file>
 
     <!-- Specify paths to never check -->
     <exclude-pattern>*/storage/*</exclude-pattern>
@@ -50,7 +49,6 @@
         <exclude name="PSR2.ControlStructures.ElseIfDeclaration.NotAllowed"/>
         <exclude name="PSR2.ControlStructures.ControlStructureSpacing"/>
 
-        <exclude name="Squiz.Functions.MultiLineFunctionDeclaration.BraceOnSameLine"/>
         <exclude name="Squiz.ControlStructures.ControlSignature.SpaceAfterCloseBrace"/>
         <exclude name="Squiz.WhiteSpace.ControlStructureSpacing.SpacingAfterOpen"/>
     </rule>
