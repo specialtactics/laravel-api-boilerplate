@@ -1,0 +1,91 @@
+version: '3.7'
+
+services:
+
+# Workspace Container
+    workspace:
+      container_name: your_project_workspace
+      build:
+        context: ./env/docker/workspace
+        args:
+          - PHP_VERSION=${PHP_VERSION}
+          - PHP_XDEBUG_ENABLE=${PHP_XDEBUG_ENABLE}
+          - PHP_XDEBUG_VERSION=${PHP_XDEBUG_VERSION}
+          - PHP_XDEBUG_REMOTE_CONNECT_BACK=${PHP_XDEBUG_REMOTE_CONNECT_BACK}
+          - COMPOSER_PROCESS_TIMEOUT=${COMPOSER_PROCESS_TIMEOUT}
+      volumes:
+        - ./:/var/www:cached
+        - ~/.ssh:/home/laradock/.ssh
+        - ~/.gitconfig:/home/laradock/.gitconfig
+        - ~/.config/composer:/home/laradock/.config/composer
+        - ~/.aws:/home/laradock/.aws
+      tty: true
+      networks:
+        - your_project_network
+
+# PHP-FPM
+    php-fpm:
+      container_name: your_project_php_fpm
+      build:
+        context: ./env/docker/php-fpm
+        args:
+          - PHP_VERSION=${PHP_VERSION}
+          - PHP_XDEBUG_ENABLE=${PHP_XDEBUG_ENABLE}
+          - PHP_XDEBUG_VERSION=${PHP_XDEBUG_VERSION}
+          - PHP_XDEBUG_REMOTE_CONNECT_BACK=${PHP_XDEBUG_REMOTE_CONNECT_BACK}
+      volumes:
+        - ./:/var/www:cached
+      depends_on:
+        - workspace
+      networks:
+        - your_project_network
+
+# NGINX
+    nginx:
+      container_name: your_project_nginx
+      build:
+        context: ./env/docker/nginx
+      volumes:
+        - ./:/var/www:cached
+        - ${NGINX_HOST_LOG_PATH}:/var/log/nginx
+      depends_on:
+        - php-fpm
+        - postgres
+      environment:
+        - HTTPS_METHOD=${HTTPS_METHOD}
+      ports:
+        - 80:80
+      networks:
+        - your_project_network
+
+# PostgreSQL
+    postgres:
+      container_name: your_project_postgres
+      build:
+        context: ./env/docker/postgres
+      volumes:
+        - ${DATA_PATH_HOST}postgres:/var/lib/postgresql/data
+      environment:
+        - POSTGRES_DB=${POSTGRES_DB}
+        - POSTGRES_USER=${POSTGRES_USER}
+        - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      networks:
+        - your_project_network
+
+# Redis
+    redis:
+      container_name: your_project_redis
+      image: "redis"
+      hostname: your_project_redis
+      networks:
+        - your_project_network
+
+# Volumes configuration
+volumes:
+  postgres:
+    driver: "local"
+
+# Network configuration
+networks:
+  your_project_network:
+    name: your_project_network
