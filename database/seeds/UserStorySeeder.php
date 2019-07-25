@@ -5,6 +5,11 @@ use App\Models\User;
 
 class UserStorySeeder extends BaseSeeder
 {
+    /**
+     * Credentials
+     */
+    const ADMIN_CREDENTIALS = ['admin@admin.com', 'secret'];
+
     public function runFake()
     {
         // Grab all roles for reference
@@ -13,8 +18,15 @@ class UserStorySeeder extends BaseSeeder
         // Create an admin user
         factory(App\Models\User::class)->create([
             'name'         => 'Admin',
-            'email'        => 'admin@admin.com',
+            'email'        => static::ADMIN_CREDENTIALS[0],
             'primary_role' => $roles->where('name', 'admin')->first()->role_id,
+        ]);
+
+        // Create regular user
+        factory(App\Models\User::class)->create([
+            'name'         => 'Bob',
+            'email'        => 'bob@bob.com',
+            'primary_role' => $roles->where('name', 'regular')->first()->role_id,
         ]);
 
         // Get some random roles to assign to users

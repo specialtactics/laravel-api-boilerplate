@@ -7,16 +7,8 @@ use App\Models\User;
 
 class UserTest extends ApiTestCase
 {
-    /**
-     * Setup tests
-     */
-    public function testSetup() {
-        $this->refreshAndSeedDatabase();
-        self::assertArrayHasKey('fake', ['fake' => true]);
-    }
-
     public function testGetAll() {
-        $jsonResponse = $this->json('GET', '/users');
+        $jsonResponse = $this->actingAsAdmin()->json('GET', '/users');
 
         // Check status and structure
         $jsonResponse
@@ -37,7 +29,7 @@ class UserTest extends ApiTestCase
     public function testPost() {
         $testUser = factory(User::class)->make()->getAttributes();
 
-        $jsonResponse = $this->json('POST', '/users', $testUser);
+        $jsonResponse = $this->actingAsAdmin()->json('POST', '/users', $testUser);
 
         unset($testUser['password']);
 
@@ -46,15 +38,14 @@ class UserTest extends ApiTestCase
             ->assertStatus(201)
             ->assertJsonStructure(
                 [
-                    'data' => array_merge(
-                        array_keys($testUser),
+                    'data' =>
                         [
+                            'name',
+                            'email',
                             'id',
                         ]
-                    )
                 ]
-            )
-            ->assertJsonFragment($testUser);
+            );
 
         // Check password is hidden
         $response = $jsonResponse->decodeResponseJson();

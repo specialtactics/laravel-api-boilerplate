@@ -15,7 +15,8 @@
         "fideloper/proxy": "^4.0",
         "laravel/framework": "5.8.*",
         "laravel/tinker": "^1.0",
-        "specialtactics/l5-api": "~0"
+        "specialtactics/l5-api": "~1",
+        "predis/predis": "^1.1"
     },
     "require-dev": {
         "barryvdh/laravel-ide-helper": "^2.4",
@@ -69,6 +70,7 @@
         "lint": "./vendor/bin/phpcs",
         "docs": [
             "@php artisan ide-helper:generate --no-interaction"
-        ]
+        ],
+        "build": "./env/build.sh"
     }
 }
