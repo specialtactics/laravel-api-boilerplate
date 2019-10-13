@@ -42,6 +42,14 @@ RUN docker-php-ext-install json && \
     docker-php-ext-install bcmath && \
     docker-php-ext-install sockets
 
+# Install required PECL extensions
+RUN pecl install \
+    redis
+
+# Enable above
+RUN docker-php-ext-enable \
+    redis
+
 ###########################################################################
 # Laradock non-root user:
 ###########################################################################
