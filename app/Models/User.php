@@ -46,7 +46,7 @@ class User extends BaseModel implements
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token', 'primary_role',
+        'password', 'remember_token', 'email_verified_at', 'primary_role',
     ];
 
     /**
