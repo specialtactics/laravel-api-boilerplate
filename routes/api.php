@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Http\Request;
+use Dingo\Api\Routing\Router;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,16 +21,14 @@ Route::get('/', function () {
     echo 'Welcome to our API';
 });
 
-/**
- * @var $api \Dingo\Api\Routing\Router
- */
+/** @var \Dingo\Api\Routing\Router $api */
 $api = app('Dingo\Api\Routing\Router');
-$api->version('v1', ['middleware' => ['api']], function ($api) {
+$api->version('v1', ['middleware' => ['api']], function (Router $api) {
     /*
      * Authentication
      */
-    $api->group(['prefix' => 'auth'], function ($api) {
-        $api->group(['prefix' => 'jwt'], function ($api) {
+    $api->group(['prefix' => 'auth'], function (Router $api) {
+        $api->group(['prefix' => 'jwt'], function (Router $api) {
             $api->get('/token', 'App\Http\Controllers\Auth\AuthController@token');
         });
     });
@@ -37,12 +36,12 @@ $api->version('v1', ['middleware' => ['api']], function ($api) {
     /*
      * Authenticated routes
      */
-    $api->group(['middleware' => ['api.auth']], function ($api) {
+    $api->group(['middleware' => ['api.auth']], function (Router $api) {
         /*
          * Authentication
          */
-        $api->group(['prefix' => 'auth'], function ($api) {
-            $api->group(['prefix' => 'jwt'], function ($api) {
+        $api->group(['prefix' => 'auth'], function (Router $api) {
+            $api->group(['prefix' => 'jwt'], function (Router $api) {
                 $api->get('/refresh', 'App\Http\Controllers\Auth\AuthController@refresh');
                 $api->delete('/token', 'App\Http\Controllers\Auth\AuthController@logout');
             });
@@ -53,7 +52,7 @@ $api->version('v1', ['middleware' => ['api']], function ($api) {
         /*
          * Users
          */
-        $api->group(['prefix' => 'users', 'middleware' => 'check_role:admin'], function ($api) {
+        $api->group(['prefix' => 'users', 'middleware' => 'check_role:admin'], function (Router $api) {
             $api->get('/', 'App\Http\Controllers\UserController@getAll');
             $api->get('/{uuid}', 'App\Http\Controllers\UserController@get');
             $api->post('/', 'App\Http\Controllers\UserController@post');
@@ -65,7 +64,7 @@ $api->version('v1', ['middleware' => ['api']], function ($api) {
         /*
          * Roles
          */
-        $api->group(['prefix' => 'roles'], function ($api) {
+        $api->group(['prefix' => 'roles'], function (Router $api) {
             $api->get('/', 'App\Http\Controllers\RoleController@getAll');
         });
     });
