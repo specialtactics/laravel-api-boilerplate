@@ -5,6 +5,7 @@ disabled:
   - length_ordered_imports
   - unused_use
   - post_increment
+  - phpdoc_summary
 finder:
   not-name:
     - index.php
