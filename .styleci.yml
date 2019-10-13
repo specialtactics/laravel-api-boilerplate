@@ -4,6 +4,7 @@ enabled:
 disabled:
   - length_ordered_imports
   - unused_use
+  - post_increment
 finder:
   not-name:
     - index.php
