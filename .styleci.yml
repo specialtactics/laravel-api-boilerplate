@@ -1,11 +1,15 @@
 preset: laravel
+
 enabled:
-  - alpha_ordered_imports
+
 disabled:
   - length_ordered_imports
-  - unused_use
-  - post_increment
   - phpdoc_summary
+  - phpdoc_var_without_name
+  - post_increment
+  - concat_without_spaces
+  - unused_use
+
 finder:
   not-name:
     - index.php
