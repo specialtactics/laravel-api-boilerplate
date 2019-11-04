@@ -1,5 +1,8 @@
 language: php
 
+services:
+  - postgresql
+
 matrix:
   fast_finish: true
   include:
