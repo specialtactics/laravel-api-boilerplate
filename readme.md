@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.com/specialtactics/laravel-api-boilerplate.svg?branch=master)](https://travis-ci.com/specialtactics/l5-api)
 [![StyleCI](https://github.styleci.io/repos/131504554/shield?branch=master)](https://github.styleci.io/repos/131504554)
 
 <p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
