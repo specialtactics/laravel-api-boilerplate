@@ -2,14 +2,13 @@
 
 namespace App\Exceptions;
 
-use Throwable;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use Throwable;
 
 /**
  * This is your application's exception handler
  *
  * Class Handler
- * @package App\Exceptions
  */
 class Handler extends ExceptionHandler
 {

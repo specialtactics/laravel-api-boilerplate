@@ -14,7 +14,7 @@ return [
     |
     | Change to 'dark' for dark mode
     */
-        'ui-mode' => env('TELESCOPE_UI_MODE', 'light'),
+    'ui-mode' => env('TELESCOPE_UI_MODE', 'light'),
 
     /*
     |--------------------------------------------------------------------------
