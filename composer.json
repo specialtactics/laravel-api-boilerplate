@@ -11,21 +11,21 @@
         }
     ],
     "require": {
-        "php": "^7.2",
-        "fideloper/proxy": "^4.0",
-        "laravel/framework": "^6",
-        "laravel/tinker": "^1.0",
-        "specialtactics/l5-api": "^1.1"
+        "php": "^7.2.5",
+        "fideloper/proxy": "^4.2",
+        "laravel/framework": "^7",
+        "laravel/tinker": "^2.4",
+        "specialtactics/l5-api": "^2"
     },
     "require-dev": {
-        "barryvdh/laravel-ide-helper": "^2.4",
-        "beyondcode/laravel-dump-server": "^1.0",
-        "facade/ignition": "^1.4",
-        "fzaninotto/faker": "^1.4",
-        "laravel/telescope": "^2",
+        "barryvdh/laravel-ide-helper": "^2.7",
+        "beyondcode/laravel-dump-server": "^1.4",
+        "facade/ignition": "^2.0",
+        "fzaninotto/faker": "^1.9",
+        "laravel/telescope": "^3.3",
         "mockery/mockery": "^1.0",
-        "nunomaduro/collision": "^3.0",
-        "phpunit/phpunit": "^8.3"
+        "nunomaduro/collision": "^4.2",
+        "phpunit/phpunit": "^8.5"
     },
     "config": {
         "optimize-autoloader": true,
