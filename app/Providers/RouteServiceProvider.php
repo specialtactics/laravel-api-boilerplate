@@ -17,6 +17,13 @@ class RouteServiceProvider extends ServiceProvider
     protected $namespace = 'App\Http\Controllers';
 
     /**
+     * The path to the "home" route for your application.
+     *
+     * @var string
+     */
+    public const HOME = '/';
+
+    /**
      * Define your route model bindings, pattern filters, etc.
      *
      * @return void
@@ -38,6 +45,7 @@ class RouteServiceProvider extends ServiceProvider
     {
         $this->mapApiRoutes();
 
+        // Re-enable if you would like to add web routes (eg. non-API routes for things like legacy webhook receivers)
         //$this->mapWebRoutes();
     }
 
