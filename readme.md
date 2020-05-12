@@ -43,7 +43,6 @@ I have tried to include only the packages thought absolutely necessary, so here 
 
 #### General 
  - [PHP CodeSniffer](https://github.com/squizlabs/PHP_CodeSniffer)
- - [Laravel Cors](https://github.com/barryvdh/laravel-cors)
  - [PHP-VCR](https://github.com/php-vcr/php-vcr)
 
 #### For Debugging 
