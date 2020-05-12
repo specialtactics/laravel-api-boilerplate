@@ -50,6 +50,15 @@ class User extends BaseModel implements
     ];
 
     /**
+     * The attributes that should be cast to native types.
+     *
+     * @var array
+     */
+    protected $casts = [
+        'email_verified_at' => 'datetime',
+    ];
+
+    /**
      * Model's boot function
      */
     public static function boot()
