@@ -13,9 +13,9 @@
     "require": {
         "php": "^7.2.5",
         "fideloper/proxy": "^4.2",
-        "laravel/framework": "^7",
+        "laravel/framework": "^7.0",
         "laravel/tinker": "^2.4",
-        "specialtactics/l5-api": "^2"
+        "specialtactics/l5-api": "^2.0"
     },
     "require-dev": {
         "barryvdh/laravel-ide-helper": "^2.7",
