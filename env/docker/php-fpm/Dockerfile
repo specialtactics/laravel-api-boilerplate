@@ -15,6 +15,7 @@ RUN apt-get update \
     curl \
     iputils-ping \
     vim \
+    libonig-dev \
   && rm -rf /var/lib/apt/lists/*
 
 # Install Laravel required extensions

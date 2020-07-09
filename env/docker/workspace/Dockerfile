@@ -27,6 +27,7 @@ RUN apt-get update \
     ruby-bundler \
     ssh-client \
     iputils-ping \
+    libonig-dev \
   && rm -rf /var/lib/apt/lists/*
 
 # Install Laravel required extensions
