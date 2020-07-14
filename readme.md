@@ -10,7 +10,7 @@ It is intended for this repository to be used when starting a new API project. T
 The principles of this boilerplate are to;
 
  - Save developers considerable effort by using reasonable conventions
- - Allow for everything the boilerplate provides to be easily and entirely customised to suit developer needs, through normal PHP inheritance
+ - Allow for everything the boilerplate provides to be easily extended and entirely customised to suit developer needs, through normal PHP inheritance
    - As well as allow developers to easily use the boilerplate functionality and mix it in with their own implementation
  - Follow REST standards very closely
  - Use existing Laravel features and existing Laravel add-on packages where possible
