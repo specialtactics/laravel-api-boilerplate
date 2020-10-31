@@ -41,5 +41,11 @@
         <server name="QUEUE_CONNECTION" value="sync"/>
         <server name="SESSION_DRIVER" value="array"/>
         <server name="TELESCOPE_ENABLED" value="false"/>
+        <env name="APP_DEBUG" value="true"/>
+        <env name="APP_URL" value="http://localhost"/>
+        <env name="APP_KEY" value="CC58JtJ6QNRTnAr3tdwTw6qMuiK4nDTaozD8Uk3zQ0xuTc6VbW2DBek3cArbnZTx"/>
+        <env name="API_PREFIX" value="/"/>
+        <env name="JWT_SECRET" value="WrL8dp51k231ErDyUMgazU9KceL1RKXusu1U39YARuMbUWKuurPEtqGhEDCrUMoB"/>
+        <env name="JWT_TTL" value="7220"/>
     </php>
 </phpunit>
