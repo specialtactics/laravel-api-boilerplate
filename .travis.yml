@@ -38,6 +38,7 @@ before_script:
   - if [ "$LARAVEL_VERSION" != "" ]; then composer require --dev "laravel/framework:${LARAVEL_VERSION}" --no-update; fi;
   - if [ "$LARAVEL_VERSION" != "" ]; then composer require --dev "illuminate/support:${LARAVEL_VERSION}" --no-update; fi;
   - composer update
+  - cp -f phpunit.xml.travis phpunit.xml
   - psql -c 'create database travis_ci_test;' -U postgres
 
 
