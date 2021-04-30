@@ -1,5 +1,7 @@
 <?php
 
+namespace Database\Seeders;
+
 use App\Models\Role;
 
 class RoleTableSeeder extends BaseSeeder
