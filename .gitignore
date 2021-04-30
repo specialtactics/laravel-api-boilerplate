@@ -1,7 +1,9 @@
 /node_modules
 /public/hot
 /public/storage
+/storage/*.index
 /storage/*.key
+storage/laradock
 /vendor
 .env
 .env.backup
