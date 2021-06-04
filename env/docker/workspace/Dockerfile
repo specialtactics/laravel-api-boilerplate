@@ -115,15 +115,7 @@ RUN curl -s http://getcomposer.org/installer | php && \
     echo "export PATH=${PATH}:/var/www/vendor/bin" >> ~/.bashrc && \
     mv composer.phar /usr/local/bin/composer
 
-# Add the composer.json
-COPY ./composer.json /home/laradock/.composer/composer.json
-
-# Make sure that ~/.composer belongs to laradock
-RUN chown -R laradock:laradock /home/laradock/.composer
-
 USER laradock
-
-RUN composer global install
 
 # Export composer vendor path
 RUN echo "" >> ~/.bashrc && \
