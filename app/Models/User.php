@@ -2,7 +2,6 @@
 
 namespace App\Models;
 
-use App\Models\Role;
 use Hash;
 use Illuminate\Auth\Authenticatable;
 use Illuminate\Auth\Passwords\CanResetPassword;
@@ -12,6 +11,7 @@ use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
 use Illuminate\Foundation\Auth\Access\Authorizable;
 use Illuminate\Notifications\Notifiable;
 use Tymon\JWTAuth\Contracts\JWTSubject;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class User extends BaseModel implements
     AuthenticatableContract,
@@ -19,7 +19,7 @@ class User extends BaseModel implements
     CanResetPasswordContract,
     JWTSubject
 {
-    use Authenticatable, Authorizable, CanResetPassword, Notifiable;
+    use Authenticatable, Authorizable, CanResetPassword, HasFactory, Notifiable;
 
     /**
      * @var int Auto increments integer key
@@ -37,16 +37,21 @@ class User extends BaseModel implements
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'primary_role',
+        'name',
+        'email',
+        'password',
+        'primary_role',
     ];
 
     /**
-     * The attributes that should be hidden for arrays and API output
+     * The attributes that should be hidden for arrays.
      *
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token', 'email_verified_at', 'primary_role',
+        'password',
+        'remember_token',
+        'email_verified_at',
     ];
 
     /**
