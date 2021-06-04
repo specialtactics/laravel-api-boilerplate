@@ -25,11 +25,11 @@
             <directory suffix="Test.php">./tests/Api</directory>
         </testsuite>
     </testsuites>
-    <filter>
-        <whitelist processUncoveredFilesFromWhitelist="true">
+    <coverage processUncoveredFiles="true">
+        <include>
             <directory suffix=".php">./app</directory>
-        </whitelist>
-    </filter>
+        </include>
+    </coverage>
     <php>
         <ini name="memory_limit" value="-1"/>
         <server name="APP_ENV" value="testing"/>
