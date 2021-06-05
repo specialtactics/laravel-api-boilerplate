@@ -11,25 +11,25 @@
          processIsolation="false"
          stopOnFailure="false">
     <testsuites>
-        <!--
         <testsuite name="Unit">
             <directory suffix="Test.php">./tests/Unit</directory>
         </testsuite>
 
+        <testsuite name="API">
+            <directory suffix="Test.php">./tests/Api</directory>
+        </testsuite>
+
+        <!--
         <testsuite name="Feature">
             <directory suffix="Test.php">./tests/Feature</directory>
         </testsuite>
         -->
-
-        <testsuite name="API">
-            <directory suffix="Test.php">./tests/Api</directory>
-        </testsuite>
     </testsuites>
-    <filter>
-        <whitelist processUncoveredFilesFromWhitelist="true">
+    <coverage processUncoveredFiles="true">
+        <include>
             <directory suffix=".php">./app</directory>
-        </whitelist>
-    </filter>
+        </include>
+    </coverage>
     <php>
         <ini name="memory_limit" value="-1"/>
         <server name="APP_ENV" value="testing"/>

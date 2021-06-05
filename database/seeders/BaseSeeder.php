@@ -1,5 +1,7 @@
 <?php
 
+namespace Database\Seeders;
+
 use Illuminate\Database\Seeder;
 
 class BaseSeeder extends Seeder
@@ -18,7 +20,7 @@ class BaseSeeder extends Seeder
     {
         // You can set the locale of your seeder as a parameter to the create function
         // Available locales: https://github.com/fzaninotto/Faker/tree/master/src/Faker/Provider
-        $this->faker = Faker\Factory::create();
+        $this->faker = \Faker\Factory::create();
 
         $this->before();
 
@@ -26,7 +28,7 @@ class BaseSeeder extends Seeder
         $this->runAlways();
 
         // Production Only
-        if (App::environment() == 'production') {
+        if (app()->environment() === 'production') {
             $this->runProduction();
         }
         // Fake environments

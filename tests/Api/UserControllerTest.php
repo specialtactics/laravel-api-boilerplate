@@ -27,7 +27,7 @@ class UserControllerTest extends ApiTestCase
     }
 
     public function testPost() {
-        $testUser = factory(User::class)->make()->getAttributes();
+        $testUser = User::factory()->make()->getAttributes();
 
         $jsonResponse = $this->actingAsAdmin()->json('POST', '/users', $testUser);
 

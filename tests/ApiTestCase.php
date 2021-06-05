@@ -5,7 +5,8 @@ namespace Tests;
 use App\Models\User;
 use Illuminate\Contracts\Auth\Authenticatable as UserContract;
 use JWTAuth;
-use UserStorySeeder;
+use Database\Seeders\UserStorySeeder;
+use Illuminate\Support\Arr;
 
 abstract class ApiTestCase extends TestCase
 {

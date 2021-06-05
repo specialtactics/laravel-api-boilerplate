@@ -1,5 +1,7 @@
 <?php
 
+namespace Database\Seeders;
+
 use App\Models\Role;
 
 class RoleTableSeeder extends BaseSeeder
@@ -32,7 +34,7 @@ class RoleTableSeeder extends BaseSeeder
      * Remove duplicates to prevent SQL errors, also prevent infinite loop in case of not enough roles
      *
      * @param $count int How many roles to get
-     * @return Illuminate\Support\Collection
+     * @return \Illuminate\Support\Collection
      */
     public static function getRandomRoles($count)
     {
