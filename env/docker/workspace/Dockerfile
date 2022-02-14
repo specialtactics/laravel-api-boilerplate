@@ -22,9 +22,6 @@ RUN apt-get update \
     nano \
     wget \
     zsh \
-    ruby \
-    ruby-dev \
-    ruby-bundler \
     ssh-client \
     iputils-ping \
     libonig-dev \
@@ -173,17 +170,6 @@ ARG PHP_XDEBUG_REMOTE_CONNECT_BACK=false
 RUN if [ ${PHP_XDEBUG_REMOTE_CONNECT_BACK} = true ]; then \
     echo "xdebug.remote_connect_back=1" >> /usr/local/etc/php/conf.d/xdebug.ini \
 ;fi
-
-#####################################
-# RVM, Ruby, and Bundler Installation
-#####################################
-
-# Install Ruby & Apiary CLI tool
-USER root
-RUN echo $(ruby -v) && \
-    gem update --system && \
-    gem install bundler && \
-    gem install apiaryio
 
 
 ###########################################################################
