@@ -1,0 +1,50 @@
+name: CI Tests
+
+on:
+  pull_request:
+  push:
+    branches:
+      - master
+      - v*
+
+jobs:
+  tests:
+    runs-on: ubuntu-22.04
+
+    strategy:
+      fail-fast: false
+      matrix:
+        stability: [prefer-stable]
+        php: [8.1, 8.2]
+        laravel: [10]
+
+    name: PHP ${{ matrix.php }} - Laravel ${{ matrix.laravel }}
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # Docs: https://github.com/shivammathur/setup-php
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+          extensions: dom, curl, libxml, mbstring, zip
+          ini-values: error_reporting=E_ALL
+          tools: composer:v2
+          # todo: Add
+          coverage: none
+
+      - name: Install dependencies
+        run: |
+          composer require "illuminate/contracts=^${{ matrix.laravel }}" --no-update
+          composer update --prefer-dist --no-interaction --no-progress --optimize-autoloader
+      - name: Prepare the application
+        run: |
+          php artisan key:generate
+      - name: Clear Config
+        run: |
+          php artisan config:clear
+          php artisan cache:clear
+      - name: Run phpunit tests
+        run: composer test

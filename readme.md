@@ -33,10 +33,9 @@ Before adding any new functionality, you should consider whether it's possible a
 Every great project stands on the shoulders of giants. Check out the documentation of these key supporting packages to learn more;
 
  - [Laravel](https://laravel.com/docs/)
- - [Dingo API](https://github.com/dingo/api/wiki)
- - [Tymon JWT Auth](https://github.com/tymondesigns/jwt-auth)
- - [League Fractal](https://fractal.thephpleague.com/)
- - [Laravel UUID](https://github.com/webpatser/laravel-uuid/tree/2.1.1)
+ - [Dingo API](https://github.com/api-ecosystem-for-laravel/dingo-api)
+ - [Tymon JWT Auth](https://github.com/PHP-Open-Source-Saver/jwt-auth)
+ - [League Fractal](https://github.com/PHP-Open-Source-Saver/fractal)
 
 ## Recommended Packages
 
