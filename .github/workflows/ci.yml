@@ -41,7 +41,8 @@ jobs:
           composer update --prefer-dist --no-interaction --no-progress --optimize-autoloader
       - name: Prepare the application
         run: |
-          php artisan key:generate
+          composer post-root-package-install
+          composer post-create-project-cmd
       - name: Clear Config
         run: |
           php artisan config:clear
