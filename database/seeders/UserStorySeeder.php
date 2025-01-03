@@ -21,15 +21,15 @@ class UserStorySeeder extends BaseSeeder
 
         // Create an admin user
         \App\Models\User::factory()->create([
-            'name'         => 'Admin',
-            'email'        => static::ADMIN_CREDENTIALS['email'],
+            'name' => 'Admin',
+            'email' => static::ADMIN_CREDENTIALS['email'],
             'primary_role' => $roles->where('name', 'admin')->first()->role_id,
         ]);
 
         // Create regular user
         \App\Models\User::factory()->create([
-            'name'         => 'Bob',
-            'email'        => 'bob@bob.com',
+            'name' => 'Bob',
+            'email' => 'bob@bob.com',
             'primary_role' => $roles->where('name', 'regular')->first()->role_id,
         ]);
 

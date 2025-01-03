@@ -10,8 +10,8 @@ class BasePolicy extends RestfulModelPolicy
     /**
      * Process 'global' authorisation rules
      *
-     * @param $user
-     * @param $ability
+     * @param  $user
+     * @param  $ability
      * @return bool
      */
     public function before(User $user, $ability)
