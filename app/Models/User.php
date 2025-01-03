@@ -87,7 +87,7 @@ class User extends BaseModel implements
     {
         return [
             'email' => 'email|max:255|unique:users',
-            'name'  => 'required|min:3',
+            'name' => 'required|min:3',
             'password' => 'required|min:6',
         ];
     }
