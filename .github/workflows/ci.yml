@@ -70,7 +70,7 @@ jobs:
 
       - name: Set postgres envs for app
         run: |
-          echo "DB_HOST=postgres" >> .env
+          echo "DB_HOST=localhost" >> .env
           echo "DB_DATABASE=postgres" >> .env
           echo "DB_DATABASE_TEST=postgres" >> .env
           echo "DB_USERNAME=postgres" >> .env
