@@ -17,30 +17,30 @@
         }
     ],
     "require": {
-        "php": "^7.3|^8.0",
-        "fideloper/proxy": "^4.4",
-        "fruitcake/laravel-cors": "^2.0",
-        "guzzlehttp/guzzle": "^7.0.1",
-        "laravel/framework": "^8.0",
-        "laravel/tinker": "^2.5",
-        "specialtactics/l5-api": "^3.0"
+        "php": ">=8.1",
+        "guzzlehttp/guzzle": "^7.6",
+        "laravel/framework": "^10.43",
+        "laravel/tinker": "^2.9",
+        "specialtactics/l5-api": "^5.0"
     },
     "require-dev": {
-        "barryvdh/laravel-ide-helper": "^2.9",
-        "beyondcode/laravel-dump-server": "^1.4",
-        "facade/ignition": "^2.7",
-        "fakerphp/faker": "^1.9.1",
-        "mockery/mockery": "^1.4.1",
-        "nunomaduro/collision": "^5.0",
+        "barryvdh/laravel-ide-helper": "^2.15",
+        "beyondcode/laravel-dump-server": "^1.9",
+        "fakerphp/faker": "^1.15",
+        "mockery/mockery": "^1.5",
+        "nunomaduro/collision": "^6.5",
         "phpunit/phpunit": "^9.3.3",
-        "laravel/telescope": "^4.4"
+        "laravel/telescope": "^5.1"
     },
     "autoload": {
         "psr-4": {
             "App\\": "app/",
             "Database\\Factories\\": "database/factories/",
             "Database\\Seeders\\": "database/seeders/"
-        }
+        },
+        "classmap": [
+            "database/migrations"
+        ]
     },
     "autoload-dev": {
         "psr-4": {

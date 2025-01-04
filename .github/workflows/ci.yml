@@ -1,0 +1,79 @@
+name: CI Tests
+
+on:
+  pull_request:
+  push:
+    branches:
+      - master
+      - v*
+
+jobs:
+  tests:
+    runs-on: ubuntu-22.04
+
+    strategy:
+      fail-fast: false
+      matrix:
+        stability: [prefer-stable]
+        php: [8.1, 8.2, 8.3, 8.4]
+        laravel: [10]
+
+    name: PHP ${{ matrix.php }} - Laravel ${{ matrix.laravel }}
+
+    # Service containers to run with `container-job`
+    services:
+      # Label used to access the service container
+      postgres:
+        # Docker Hub image
+        image: postgres
+        # Provide the password for postgres
+        env:
+          POSTGRES_PASSWORD: secret
+        # Set health checks to wait until postgres has started
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+        ports:
+          - 5432:5432
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # Docs: https://github.com/shivammathur/setup-php
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+          extensions: dom, curl, libxml, mbstring, zip
+          ini-values: error_reporting=E_ALL
+          tools: composer:v2
+          # todo: Add
+          coverage: none
+
+      - name: Install dependencies
+        run: |
+          composer require "illuminate/contracts=^${{ matrix.laravel }}" --no-update
+          composer update --prefer-dist --no-interaction --no-progress --optimize-autoloader
+
+      - name: Prepare the application
+        run: |
+          composer run post-root-package-install
+          composer run post-create-project-cmd
+
+      - name: Clear Config
+        run: |
+          php artisan config:clear
+          php artisan cache:clear
+
+      - name: Set postgres envs for app
+        run: |
+          echo "DB_HOST=localhost" >> .env
+          echo "DB_DATABASE=postgres" >> .env
+          echo "DB_DATABASE_TEST=postgres" >> .env
+          echo "DB_USERNAME=postgres" >> .env
+
+      - name: Run phpunit tests
+        run: composer test
