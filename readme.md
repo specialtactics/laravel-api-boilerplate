@@ -1,5 +1,7 @@
-[![Build Status](https://travis-ci.com/specialtactics/laravel-api-boilerplate.svg?branch=master)](https://travis-ci.com/specialtactics/l5-api)
-[![StyleCI](https://github.styleci.io/repos/131504554/shield?branch=master)](https://github.styleci.io/repos/131504554)
+[![CI Tests](https://github.com/specialtactics/laravel-api-boilerplate/actions/workflows/ci.yml/badge.svg?branch=master)](https://github.com/specialtactics/laravel-api-boilerplate/actions)
+[![License](https://img.shields.io/packagist/l/specialtactics/laravel-api-boilerplate.svg?style=flat-square)](LICENSE)
+[![Development Version](https://img.shields.io/packagist/vpre/specialtactics/laravel-api-boilerplate.svg?style=flat-square)](https://packagist.org/packages/specialtactics/laravel-api-boilerplate)
+
 
 <p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
 
