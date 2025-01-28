@@ -63,17 +63,17 @@ jobs:
           composer run post-root-package-install
           composer run post-create-project-cmd
 
-      - name: Clear Config
-        run: |
-          php artisan config:clear
-          php artisan cache:clear
-
       - name: Set postgres envs for app
         run: |
           echo "DB_HOST=localhost" >> .env
           echo "DB_DATABASE=postgres" >> .env
           echo "DB_DATABASE_TEST=postgres" >> .env
           echo "DB_USERNAME=postgres" >> .env
+
+      - name: Clear Config
+        run: |
+          php artisan config:clear
+          php artisan cache:clear
 
       - name: Run phpunit tests
         run: composer test
