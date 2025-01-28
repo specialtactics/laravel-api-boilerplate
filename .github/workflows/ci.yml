@@ -73,7 +73,7 @@ jobs:
       - name: Clear Config
         run: |
           php artisan config:clear
-          php artisan cache:clear
+          # php artisan cache:clear
 
       - name: Run phpunit tests
         run: composer test
