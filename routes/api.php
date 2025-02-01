@@ -2,6 +2,7 @@
 
 use Dingo\Api\Routing\Router;
 use Illuminate\Http\Request;
+use Specialtactics\L5Api\Http\Middleware\CheckUserRole;
 
 /*
 |--------------------------------------------------------------------------

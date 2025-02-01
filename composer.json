@@ -17,30 +17,30 @@
         }
     ],
     "require": {
-        "php": ">=8.1",
-        "guzzlehttp/guzzle": "^7.6",
-        "laravel/framework": "^10.43",
+        "php": "^8.2",
+        "laravel/framework": "^11.31",
         "laravel/tinker": "^2.9",
-        "specialtactics/l5-api": "^5.0"
+        "specialtactics/l5-api": "^6.0.2",
+        "guzzlehttp/guzzle": "^7.6"
     },
     "require-dev": {
-        "barryvdh/laravel-ide-helper": "^2.15",
-        "beyondcode/laravel-dump-server": "^1.9",
-        "fakerphp/faker": "^1.15",
-        "mockery/mockery": "^1.5",
-        "nunomaduro/collision": "^6.5",
-        "phpunit/phpunit": "^9.3.3",
-        "laravel/telescope": "^5.1"
+        "barryvdh/laravel-ide-helper": "^3.5",
+        "beyondcode/laravel-dump-server": "^2.0",
+        "fakerphp/faker": "^1.23",
+        "laravel/pail": "^1.1",
+        "laravel/pint": "^1.13",
+        "laravel/sail": "^1.26",
+        "mockery/mockery": "^1.6",
+        "nunomaduro/collision": "^8.6",
+        "phpunit/phpunit": "^11.0.1",
+        "laravel/telescope": "^5.2"
     },
     "autoload": {
         "psr-4": {
             "App\\": "app/",
             "Database\\Factories\\": "database/factories/",
             "Database\\Seeders\\": "database/seeders/"
-        },
-        "classmap": [
-            "database/migrations"
-        ]
+        }
     },
     "autoload-dev": {
         "psr-4": {
@@ -52,14 +52,23 @@
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
             "@php artisan package:discover --ansi"
         ],
+        "post-update-cmd": [
+            "@php artisan vendor:publish --tag=laravel-assets --ansi --force"
+        ],
         "post-root-package-install": [
             "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
         ],
         "post-create-project-cmd": [
             "@php artisan key:generate --ansi",
-            "@php artisan jwt:secret"
+            "@php artisan jwt:secret",
+            "@php -r \"file_exists('database/database.sqlite') || touch('database/database.sqlite');\"",
+            "@php artisan migrate --graceful --ansi"
         ],
-        "test": "./vendor/bin/phpunit --colors=always -v --testdox",
+        "dev": [
+            "Composer\\Config::disableProcessTimeout",
+            "npx concurrently -c \"#93c5fd,#c4b5fd,#fb7185,#fdba74\" \"php artisan serve\" \"php artisan queue:listen --tries=1\" \"php artisan pail --timeout=0\" \"npm run dev\" --names=server,queue,logs,vite"
+        ],
+        "test": "./vendor/bin/phpunit --colors=always --testdox",
         "lint": "./vendor/bin/phpcs",
         "docs": [
             "@php artisan ide-helper:generate --no-interaction"
@@ -76,8 +85,12 @@
     "config": {
         "optimize-autoloader": true,
         "preferred-install": "dist",
-        "sort-packages": true
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true,
+            "php-http/discovery": true
+        }
     },
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "prefer-stable": true
 }
