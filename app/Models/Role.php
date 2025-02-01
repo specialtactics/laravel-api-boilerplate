@@ -14,10 +14,6 @@ class Role extends BaseModel
      */
     public $primaryKey = 'role_id';
 
-    /**
-     * @var string UUID key
-     */
-    public $uuidKey = 'role_uuid';
 
     /**
      * The attributes that are mass assignable.
