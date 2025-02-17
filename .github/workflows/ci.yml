@@ -16,25 +16,16 @@ jobs:
       matrix:
         stability: [prefer-stable]
         php: [8.2, 8.3, 8.4]
-        laravel: [11]
+        laravel: [11, '12']
 
     name: PHP ${{ matrix.php }} - Laravel ${{ matrix.laravel }}
 
-    # Service containers to run with `container-job`
     services:
-      # Label used to access the service container
       postgres:
-        # Docker Hub image
         image: postgres
-        # Provide the password for postgres
         env:
           POSTGRES_PASSWORD: secret
-        # Set health checks to wait until postgres has started
-        options: >-
-          --health-cmd pg_isready
-          --health-interval 10s
-          --health-timeout 5s
-          --health-retries 5
+        options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
         ports:
           - 5432:5432
 
@@ -42,7 +33,6 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      # Docs: https://github.com/shivammathur/setup-php
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
@@ -50,7 +40,6 @@ jobs:
           extensions: dom, curl, libxml, mbstring, zip
           ini-values: error_reporting=E_ALL
           tools: composer:v2
-          # todo: Add
           coverage: none
 
       - name: Install dependencies
