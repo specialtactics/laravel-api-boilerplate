@@ -19,17 +19,15 @@ RUN apt-get update \
   && rm -rf /var/lib/apt/lists/*
 
 # Install Laravel required extensions
-RUN docker-php-ext-install json && \
-    docker-php-ext-install mbstring && \
-    docker-php-ext-install xml && \
-    docker-php-ext-install ctype && \
-    docker-php-ext-install tokenizer && \
-    docker-php-ext-install pdo_pgsql && \
-    docker-php-ext-install opcache && \
-    docker-php-ext-install zip && \
-    docker-php-ext-configure intl && docker-php-ext-install intl && \
-    docker-php-ext-install bcmath && \
-    docker-php-ext-install sockets
+RUN docker-php-ext-install \
+    mbstring \
+    pdo_pgsql \
+    opcache \
+    zip \
+    bcmath \
+    sockets \
+    intl \
+    pcntl
 
 # Install required PECL extensions
 RUN pecl install \

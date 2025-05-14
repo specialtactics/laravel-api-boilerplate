@@ -22,6 +22,9 @@ services:
       tty: true
       networks:
         - your_project_network
+      dns:
+        - 8.8.8.8
+        - 1.1.1.1
 
 # PHP-FPM
     php-fpm:
