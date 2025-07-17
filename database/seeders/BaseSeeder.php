@@ -49,7 +49,7 @@ class BaseSeeder extends Seeder
     }
 
     /**
-     * Run seeds to be ran only on production environments
+     * Run seeds to be run only in production environments
      *
      * @return void
      */
@@ -58,7 +58,7 @@ class BaseSeeder extends Seeder
     }
 
     /**
-     * Run seeds to be ran on every environment (including production)
+     * Run seeds to be run in every environment (including production)
      *
      * @return void
      */
