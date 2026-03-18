@@ -45,7 +45,7 @@ Every great project stands on the shoulders of giants. Check out the documentati
 I have tried to include only the packages thought absolutely necessary, so here is a list of packages I recommend checking out:
 
 #### General 
- - [PHP CodeSniffer](https://github.com/squizlabs/PHP_CodeSniffer)
+ - [PHP CodeSniffer](https://github.com/PHPCSStandards/PHP_CodeSniffer)
  - [PHP-VCR](https://github.com/php-vcr/php-vcr)
 
 #### For Debugging 
